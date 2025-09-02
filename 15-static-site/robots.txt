@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /site/private/
+Disallow: /site/ops/logistics/
+Disallow: /site/content/itineraries/2025/

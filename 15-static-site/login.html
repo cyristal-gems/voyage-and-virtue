@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Voyage &amp; Virtue — Client Portal</title>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+  /* Full-page luxury black/gold theme with subtle background imagery */
+  :root{
+    --bg: #0a0d11;
+    --ink: #eaf1f7;
+    --muted:#9aa3ad;
+    --card:#12161c;
+    --line:#222a35;
+    --gold:#e7c78a;
+    --accent:#b48a5a;
+  }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Arial}
+  .header{position:sticky;top:0;background:#0a0d11f2;border-bottom:1px solid var(--line);backdrop-filter:blur(6px);z-index:10}
+  .container{max-width:1200px;margin:0 auto;padding:18px}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 30%,var(--gold),var(--accent));color:#111;font-weight:900}
+  nav a{color:#d6dde5;text-decoration:none;margin-left:16px}
+  nav a:hover{color:#fff}
+
+  /* Background image + gold-tinted overlay */
+  .login-bg{
+    min-height:calc(100vh - 80px);
+    display:grid;
+    place-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      linear-gradient( to bottom, rgba(10,13,17,.55), rgba(10,13,17,.85) ),
+      url('images/fine-art.jpeg') center/cover no-repeat;
+  }
+  .grain{position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(231,199,138,.10), transparent 60%),
+    radial-gradient(1200px 600px at 110% 110%, rgba(180,138,90,.10), transparent 60%);
+    mix-blend:screen;
+  }
+
+  /* Centered card */
+  .login-card{
+    position:relative;
+    width:min(560px, 92vw);
+    background:rgba(18,22,28,.9);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px;
+    box-shadow:0 24px 64px rgba(0,0,0,.55);
+    backdrop-filter: blur(6px);
+  }
+
+  /* Tabs */
+  .tabs{display:flex; justify-content:center; gap:14px; margin-bottom:16px}
+  .tab{
+    padding:10px 16px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    cursor:pointer;
+    min-width:160px;
+    text-align:center;
+    user-select:none;
+    background:#141820;
+    color:var(--ink);
+    letter-spacing:.3px;
+  }
+  .tab[aria-selected="true"]{
+    background:#1b2028;
+    border-color:#2a3340;
+    box-shadow: inset 0 -3px 0 var(--gold);
+    font-weight:800;
+    color:#fff;
+  }
+
+  /* Centered inputs */
+  .form-inner{max-width:380px; margin:0 auto}
+  .input{
+    width:100%;
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid var(--line);
+    background:#0f1319;
+    color:var(--ink);
+  }
+  .row{margin:12px 0}
+  .btn{
+    width:100%;
+    background:var(--gold);
+    color:#111;
+    border:none;
+    border-radius:12px;
+    padding:12px 14px;
+    font-weight:800;
+    cursor:pointer;
+  }
+  .btn:hover{filter:brightness(1.05)}
+
+  .small{font-size:12px; color:#e2a674}
+  .footer{border-top:1px solid var(--line);padding:18px;color:#9aa3ad;text-align:center}
+</style>
+<script defer="" src="/canary/canary.js"></script>
+</head>
+<body>
+<header class="header">
+<div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+<nav class="leftlinks" style="white-space:nowrap">
+<a href="#" style="color:#d6dde5;margin-right:8px">Facebook</a> ·
+      <a href="#" style="color:#d6dde5;margin:0 8px">Twitter</a> ·
+      <a href="#" style="color:#d6dde5;margin:0 8px">Instagram</a> ·
+      <a href="#" style="color:#d6dde5;margin-left:8px">YouTube</a>
+</nav>
+<a class="brand" href="index.html" style="display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit">
+<div class="logo">V&amp;V</div>
+<div><div style="font-weight:800">VOYAGE &amp; VIRTUE</div><div class="small">Client Portal</div></div>
+</a>
+<nav class="rightlinks" style="white-space:nowrap">
+<a href="login.html" style="color:#d6dde5;margin-right:12px">Login</a> ·
+      <a href="about.html" style="color:#d6dde5;margin:0 12px">About</a> ·
+      <a href="news.html" style="color:#d6dde5;margin-left:12px">News</a>
+</nav>
+</div>
+</header>
+<section class="login-bg">
+<div class="grain"></div>
+<div class="login-card">
+<div aria-label="Sign-in tabs" class="tabs" role="tablist">
+<button aria-controls="fg" aria-selected="true" class="tab" id="tg" role="tab">Guest</button>
+<button aria-controls="fe" aria-selected="false" class="tab" id="te" role="tab">Employee</button>
+</div>
+<!-- Guest form -->
+<form aria-labelledby="tg" id="fg" method="get" role="tabpanel">
+<div class="form-inner">
+<div class="row"><input class="input" name="email" placeholder="Guest Email" required="" type="email"/></div>
+<div class="row"><input class="input" name="code" placeholder="Access Code" required="" type="password"/></div>
+<button class="btn" type="submit">Sign in</button>
+</div>
+</form>
+<!-- Employee form -->
+<form aria-labelledby="te" id="fe" method="get" role="tabpanel" style="display:none">
+<div class="form-inner">
+<div class="row"><input class="input" name="user" placeholder="Username" required="" type="text"/></div>
+<div class="row"><input class="input" name="pass" placeholder="Password" required="" type="password"/></div>
+<button class="btn" type="submit">Sign in</button>
+</div>
+</form>
+<div class="small" id="msg" style="margin-top:10px"></div>
+</div>
+</section>
+<footer class="footer">© <span id="yr"></span> Voyage &amp; Virtue</footer>
+<script>
+  const W = "https://BASE_WEBHOOK/gg/canary/hit";
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const tg = document.getElementById('tg');
+  const te = document.getElementById('te');
+  const fg = document.getElementById('fg');
+  const fe = document.getElementById('fe');
+  const msg = document.getElementById('msg');
+
+  function activate(tabBtn, panelToShow, otherBtn, panelToHide){tabBtn.setAttribute("aria-selected","true");otherBtn.setAttribute("aria-selected","false");panelToShow.style.display="block";panelToHide.style.display="none";msg.textContent="";(panelToShow.querySelector("input")||{}).focus&&panelToShow.querySelector("input").focus();}
+  tg.addEventListener('click', () => activate(tg, fg, te, fe));
+  te.addEventListener('click', () => activate(te, fe, tg, fg));
+  tg.addEventListener('keydown', (e)=>{ if(e.key==='ArrowRight') te.click(); });
+  te.addEventListener('keydown', (e)=>{ if(e.key==='ArrowLeft') tg.click(); });
+
+  function hit(t, p){
+    try{
+      fetch(W, { method:'POST', mode:'no-cors',
+        body: JSON.stringify(Object.assign({type:t, ua:navigator.userAgent, ts:new Date().toISOString()}, p)) });
+    }catch(_){}
+  }
+  fg.addEventListener('submit', e=>{
+    e.preventDefault();
+    const d = new FormData(fg);
+    
+    (new Image()).src='CANARY_URL_LOGIN_GUEST?u='+encodeURIComponent((new FormData(fg)).get('email')||'unknown');
+    msg.textContent = 'Welcome, redirecting…';
+  });
+  fe.addEventListener('submit', e=>{
+    e.preventDefault();
+    const d = new FormData(fe);
+    
+    (new Image()).src='CANARY_URL_LOGIN_EMP?u='+encodeURIComponent((new FormData(fe)).get('user')||'unknown');
+    msg.textContent = 'Welcome, redirecting…';
+  });
+</script>
+<script>
+(function () {
+  function forceRedirect(form, url) {
+    if (!form) return;
+    form.addEventListener('submit', function (ev) {
+      try {
+        ev.preventDefault();
+        setTimeout(function () { window.location.href = url; }, 250);
+      } catch (_) {}
+    }, true);
+  }
+  var emp = document.getElementById('fe');
+  var gst = document.getElementById('fg');
+  forceRedirect(emp, '/employee.html');
+  forceRedirect(gst, '/guest.html');
+})();
+</script></body></html>
