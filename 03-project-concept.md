@@ -1,0 +1,3 @@
+# Project Concept
+
+The central theme of this project was a cybersecurity simulation focused on a high-end art website, framed through the lens of the Charlie’s Angels concept. Just as the Angels are tasked with high-stakes missions under the direction of Charlie, the project project team split into offensive and defensive roles to carry out a realistic security engagement. The Blue Team took on the role of “The Gallery Guards,” designing the target environment and embedding defensive traps, while the Red Team, “The Velvet Heist,” carried out a simulated attack against the site in pursuit of valuable data.

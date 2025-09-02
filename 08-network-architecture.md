@@ -1,0 +1,7 @@
+# Network Architecture
+
+Voyage & virtue’s network architecture was designed to emulate adversarial activity while simultaneously showcasing fortified security measures within the network. The architecture integrates multiple AWS services for both decoy operations and monitoring. The network features a multitiered VPC design with segmented public and private subnets, in addition to security groups and host based firewalls, and NAT gateways. All infrastructure and guardrails were provisioned in the AWS console environment as well as using AWS CLI. 
+
+An S3 instance hosts the fake honeypot service with additional layers including an application load balancer for traffic routing, AWS WAF for filtering suspicious requests, and Cloudwatch for logging attacker interactions. A small honeypot was deployed and segmented from the rest of the network to prohibit any lateral movement from threat actors. With open inbound TCP traffic on port 22 to lure malicious activities such as scanning and other exploitative attempts all traffic was logged to AWS CloudWatch and GuardDuty for analysis. Additionally, canary tokens were scattered across the network by embedding tokenized artifacts in hidden locations. Once an attacker has reached a canary, an automated alert is triggered through Amazon SNS. 
+
+This design creates a layered strategy that balances deception, monitoring and response, which combined with AWS hosted services creates an intelligence collection and proactive defense operation.
