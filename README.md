@@ -24,7 +24,14 @@ The table below summarizes the tactics, techniques, and detection strategies inc
 
 ---
 
+## Project Architecture
+
+<img width="2600" height="1800" alt="voyageandvirturetopology" src="https://github.com/user-attachments/assets/1a9b9c84-d9e5-4c9f-b599-c1e6dc2757cc" />
+
+---
+
 ## Table of Contents
+
 - [Introduction](01-introduction.md)
 - [Team Roles and Dynamics](02-team-roles.md)
 - [Project Concept](03-project-concept.md)
