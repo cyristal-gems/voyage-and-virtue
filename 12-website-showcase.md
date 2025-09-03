@@ -1,7 +1,5 @@
 # Voyage & Virtue Website Setup
 
-## The Gallery Guards
-
 The Voyage & Virtue site is a deliberately staged honeypot web application disguised as a luxury art dealer and travel service. It is designed to attract attackers, entice them into interacting with sensitive-looking content, and silently trigger Canary tokens.
 
 1. **Landing Page (`index.html`)**  
