@@ -1,6 +1,6 @@
 # Project Objectives
 
-## Red Team Objectives (Atack & Exploit)
+## Red Team Objectives (Attack & Exploit)
 - Perform reconnaissance on the Voyage & Virtue website and supporting infrastructure.
 - Attempt to gain initial access through login portals and other exposed entry points.
 - Explore privilege escalation paths and lateral movement opportunities.
